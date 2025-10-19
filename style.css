@@ -1,0 +1,138 @@
+/* --- Dashboard Specific Styles (Append to existing style.css) --- */
+
+#dashboard-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Core 3-Column Grid Layout */
+#core-info-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Stacked on mobile */
+    gap: 20px;
+}
+
+@media (min-width: 900px) {
+    #core-info-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 Columns on desktop */
+    }
+}
+
+.dashboard-panel {
+    background-color: var(--color-panel-bg);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--color-primary);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+    min-height: 200px;
+}
+
+.dashboard-panel h2 {
+    color: var(--color-secondary);
+    border-bottom: 1px dashed var(--color-primary);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+/* --- Stats Panel Styling (Focus) --- */
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.stat-item label {
+    font-weight: bold;
+    color: var(--color-text-light);
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    color: var(--color-success);
+    font-size: 1.2em;
+}
+
+/* --- Pre-Flight Briefing/Review Panel --- */
+.prep-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.1);
+}
+
+.prep-btn {
+    padding: 5px 10px;
+    font-size: 0.8em;
+    background-color: var(--color-secondary);
+    color: var(--color-text-dark);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* --- Content Library Links --- */
+#library-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.library-link-item {
+    padding: 10px;
+    background-color: rgba(30, 58, 138, 0.6);
+    color: var(--color-text-light);
+    text-decoration: none;
+    border-radius: 5px;
+    border-left: 3px solid var(--color-secondary);
+    text-align: left;
+    transition: background-color 0.2s;
+}
+.library-link-item:hover {
+    background-color: rgba(30, 58, 138, 0.8);
+}
+
+/* --- Status Bar (Row 2) --- */
+#status-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+@media (min-width: 700px) {
+    #status-bar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.char-id {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--color-secondary);
+}
+
+.progress-bar-wrap {
+    flex-grow: 1;
+    max-width: 300px;
+    text-align: left;
+}
+.progress-bar-wrap progress {
+    width: 100%;
+    margin-top: 5px;
+}
+
+#launch-mission-btn {
+    /* Uses the existing cta-button styles */
+    padding: 10px 20px;
+}
